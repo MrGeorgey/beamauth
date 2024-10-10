@@ -12,13 +12,13 @@ load_dotenv()
 REPORTCHANNELID = os.getenv('REPORTCHANNELID')
 USERNAME = os.getenv('USERNAME')
 PASSWORD = os.getenv('PASSWORD')
-TOKEN = os.getenv('TOKEN')
+TOKEN1 = os.getenv('TOKEN')
 FORUMSESSION = os.getenv('FORUMSESSION')
 
 def getbio(username):
     url = f'https://forum.beammp.com/u/{username}.json'
     cookies = {
-        '_t': TOKEN,
+        '_t': TOKEN1,
         '_forum_session': FORUMSESSION
     }
     response = requests.get(url, cookies=cookies)
@@ -72,7 +72,7 @@ class Verify(commands.Cog):
             phrase = interaction.user.id*2
             submitEmbed = discord.Embed(
                 title="Account Verification",
-                description=f"Please change your [BeamMP Forum About Me](https://forum.beammp.com/u/{beammp_username}/preferences/profile) to the following phrase:\n```{phrase}```"
+                description=f"Please change your [BeamMP Forum About Me](https://forum.beammp.com/u/{beammp_username}/preferences/profile) to the following number:\n```{phrase}```"
             )
             submitEmbed.set_footer(text="v0.1.0")
             await interaction.response.send_message(embed=submitEmbed, view=ContinueUsername(username=beammp_username), ephemeral=True)
