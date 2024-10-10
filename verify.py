@@ -12,12 +12,14 @@ load_dotenv()
 REPORTCHANNELID = os.getenv('REPORTCHANNELID')
 USERNAME = os.getenv('USERNAME')
 PASSWORD = os.getenv('PASSWORD')
+TOKEN = os.getenv('TOKEN')
+FORUMSESSION = os.getenv('FORUMSESSION')
 
 def getbio(username):
     url = 'https://forum.beammp.com/u/samisverycool.json'
     cookies = {
-        '_t': 'gQWVSBtQCyFzP9mZHlyj3SIOuYcrNy1%2FIVZOPTiCG7OEbvCR6u4OqNsYROn4r1CIw6Dc5Tc7nAfHSnGd9JF8FVPAa1bCgS4Tm3oZIGb1rb%2B7evYiSYreb4PVie1gl7qL3r4X%2Bjq2CC6v9yBDQ%2Fu9eXyC2v61AEwPSdozgoMt%2FBzslDuP7KEF2kbYET5yOhmUAd%2BFSFTHESX8jOOUFZM%2BCq9ydYhrXg8J3fbnD0LbKY3UCGcQu8ZXgfmVc1eKqBIzK85GZwXU5FGhkzo3v%2FZqZgbLk%2FCSbYlr%2Fp13qa4Ee3yR2RxHzSTDGDA6zb%2Fx6To9QxotsENoJu4%3D--0l5mZuiw9ni1y1ae--K3bDhoYlHcm9DlIGq4fmwQ%3D%3D',
-        '_forum_session': 'K1vPGwz8GyjMXCBVWrFhwQUL%2B4luFH48xlwtTuK4HCyBqRT8mm%2Fvudm9l4L73EZUPRbjzEvUTLimKTgaZc8IgIAHKTJoNSrJ9kWEJK%2B0u7Ez768w%2FL6E8DG6PGnN%2BPaddLr51n2zPG6r%2BYpH8Qyyx%2F5Go3C1GfIvfhXQUAVnK%2B72VzbYB3cBa0OadBDb92J2BjLPRta5dQ8MVXVK0M2ioIDpqmBcRH04Mz%2FahU2DsbdR7EJ6%2FbPnRscDajraX0gwfeS2pQmxsWOrm2CIewL0mu0D0jHm9R9H8obG3XVeRIpA0kxeQbXC0w5Xzj95j5ZGqjr0KTJ1mujg7gkWH67bXCFShAG6EOA6Bztaq1s0pOKmKx4dyJoRek%2FdHt3zMg%3D%3D--VRx9GGi1CA7KSijU--NiFMRBLxwh7Ak%2FF2LgccXQ%3D%3D'
+        '_t': TOKEN,
+        '_forum_session': FORUMSESSION
     }
     response = requests.get(url, cookies=cookies)
     if response.status_code == 200:
