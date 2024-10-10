@@ -46,12 +46,14 @@ class ContinueUsername(discord.ui.View):
                     title="Verification Failed",
                     description="The authentication process has failed, please retry and ensure you enter the correct values."
                 )
+                failEmbed.set_footer(text="v0.1.0")
                 await interaction.response.send_message(embed=failEmbed, ephemeral=True)
             else:
                 successEmbed = discord.Embed(
                     title="Verification Successful",
                     description="The authentication was completed and you should recieve your roles and nickname shortly."
                 )
+                failEmbed.set_footer(text="v0.1.0")
                 await interaction.response.send_message(embed=successEmbed, ephemeral=True)
         except Exception as e:
             traceback.print_exception(type(e), e, e.__traceback__)
