@@ -16,7 +16,7 @@ TOKEN = os.getenv('TOKEN')
 FORUMSESSION = os.getenv('FORUMSESSION')
 
 def getbio(username):
-    url = 'https://forum.beammp.com/u/samisverycool.json'
+    url = f'https://forum.beammp.com/u/{username}.json'
     cookies = {
         '_t': TOKEN,
         '_forum_session': FORUMSESSION
